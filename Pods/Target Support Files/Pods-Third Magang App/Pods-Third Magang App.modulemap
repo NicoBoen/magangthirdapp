@@ -1,0 +1,6 @@
+framework module Pods_Third_Magang_App {
+  umbrella header "Pods-Third Magang App-umbrella.h"
+
+  export *
+  module * { export * }
+}

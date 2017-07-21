@@ -1,0 +1,6 @@
+framework module Pods_Third_Magang_AppUITests {
+  umbrella header "Pods-Third Magang AppUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
