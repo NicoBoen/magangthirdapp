@@ -33,6 +33,7 @@ class ViewController: UIViewController {
         let firstVC: FirstViewController = segue.destination as! FirstViewController
         
         firstVC.delegate = self
+        //firstVC.delegate = self
         firstVC.gambar = imageView
         
         

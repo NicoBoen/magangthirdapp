@@ -29,22 +29,24 @@ class FirstViewController: UIViewController {
     }
     @IBOutlet var smallTapGesture: UITapGestureRecognizer!
     
-    
-    
+    var width: CGFloat = 315
+    var height: CGFloat = 290
+    var x: CGFloat = 10
+    var y: CGFloat = 10
    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        viewDoang.center = CGPoint(x: 300, y: 500)
+        viewDoang.frame = CGRect(x: x, y: y, width: width, height: height)
         // Do any additional setup after loading the view.
     }
 
     
     
     @IBAction func cameraButton(_ sender: Any) {
-                let actionSheet = UIAlertController(title: "Are you sure?", message: "", preferredStyle: .alert)
-                actionSheet.addAction(UIAlertAction(title: "Go to Camera", style: .default, handler: {(_) in
+                //let actionSheet = UIAlertController(title: "Are you sure?", message: "", preferredStyle: .alert)
+              // actionSheet.addAction(UIAlertAction(title: "Go to Camera", style: .default, handler: {(_) in
                     //option that allows User to go to Camera
                     let imagePicker = UIImagePickerController()
                     if UIImagePickerController.isSourceTypeAvailable(.camera){
@@ -56,11 +58,11 @@ class FirstViewController: UIViewController {
                     self.present(imagePicker, animated: true, completion: nil)
                     }
         
-                }))
-                actionSheet.addAction(UIAlertAction(title: "Cancel", style: .default, handler: nil))
+               // }))
+        //        actionSheet.addAction(UIAlertAction(title: "Cancel", style: .default, handler: nil))
                 
                 
-                self.present(actionSheet, animated: true, completion: nil)
+      //          self.present(actionSheet, animated: true, completion: nil)
         
         
     }
@@ -68,8 +70,8 @@ class FirstViewController: UIViewController {
     
     @IBAction func galleryButton(_ sender: Any) {
         
-        let actionScheet = UIAlertController(title: "Pick your option", message: "", preferredStyle: .alert)
-        actionScheet.addAction(UIAlertAction(title: "Pick an image", style: .default, handler: {(_) in
+        //let actionScheet = UIAlertController(title: "Pick your option", message: "", preferredStyle: .alert)
+        //actionScheet.addAction(UIAlertAction(title: "Pick an image", style: .default, handler: {(_) in
             //option that allows User to pick an image
             let imagePicker = UIImagePickerController()
             imagePicker.sourceType = .photoLibrary
@@ -77,12 +79,12 @@ class FirstViewController: UIViewController {
             imagePicker.delegate = self
             
             self.present(imagePicker, animated: true, completion: nil)
-        }))
-        actionScheet.addAction(UIAlertAction(title: "Cancel", style: .default, handler: nil))
+       // }))
+       // actionScheet.addAction(UIAlertAction(title: "Cancel", style: .default, handler: nil))
         
         
     
-        self.present(actionScheet, animated: true, completion: nil)
+       // self.present(actionScheet, animated: true, completion: nil)
     
     }
 
