@@ -28,21 +28,41 @@ class FirstViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     @IBOutlet var smallTapGesture: UITapGestureRecognizer!
+    @IBOutlet var cameraimageTapGesture: UITapGestureRecognizer!
+    @IBOutlet var galeryimageTapGesture: UITapGestureRecognizer!
     
-    var width: CGFloat = 315
+    var width: CGFloat = 250
     var height: CGFloat = 290
-    var x: CGFloat = 10
-    var y: CGFloat = 10
+    var x: CGFloat = 250
+    var y: CGFloat = 350
    
+    @IBOutlet weak var cameraButton: UIButton!
+    @IBOutlet weak var galeryButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         viewDoang.frame = CGRect(x: x, y: y, width: width, height: height)
+        
+        cameraButton.contentHorizontalAlignment = UIControlContentHorizontalAlignment.left
+        galeryButton.contentHorizontalAlignment = UIControlContentHorizontalAlignment.left
         // Do any additional setup after loading the view.
     }
 
     
+    @IBAction func cameraimageTapGesture(_ sender: Any) {
+        let imagePicker = UIImagePickerController()
+        if UIImagePickerController.isSourceTypeAvailable(.camera){
+            imagePicker.mediaTypes = UIImagePickerController.availableMediaTypes(for: .camera)!
+            imagePicker.sourceType = .camera
+            imagePicker.allowsEditing = false
+            imagePicker.delegate = self
+            
+            self.present(imagePicker, animated: true, completion: nil)
+        }
+
+        
+    }
     
     @IBAction func cameraButton(_ sender: Any) {
                 //let actionSheet = UIAlertController(title: "Are you sure?", message: "", preferredStyle: .alert)
@@ -67,6 +87,16 @@ class FirstViewController: UIViewController {
         
     }
   
+    @IBAction func galeryimageTapGesture(_ sender: Any) {
+        let imagePicker = UIImagePickerController()
+        imagePicker.sourceType = .photoLibrary
+        imagePicker.allowsEditing = false
+        imagePicker.delegate = self
+        
+        self.present(imagePicker, animated: true, completion: nil)
+
+        
+    }
     
     @IBAction func galleryButton(_ sender: Any) {
         
