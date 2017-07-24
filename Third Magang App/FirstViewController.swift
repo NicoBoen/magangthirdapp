@@ -46,9 +46,16 @@ class FirstViewController: UIViewController {
         
         cameraButton.contentHorizontalAlignment = UIControlContentHorizontalAlignment.left
         galeryButton.contentHorizontalAlignment = UIControlContentHorizontalAlignment.left
+        
+        let value = UIInterfaceOrientation.landscapeLeft.rawValue
+        UIDevice.current.setValue(value, forKey: "orientation")
+        
         // Do any additional setup after loading the view.
     }
 
+    override var shouldAutorotate: Bool{
+        return true
+    }
     
     @IBAction func cameraimageTapGesture(_ sender: Any) {
         let imagePicker = UIImagePickerController()
