@@ -86,9 +86,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YDJ-5h-Smk">
-                                <rect key="frame" x="262" y="308" width="250" height="290"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YDJ-5h-Smk">
+                                <rect key="frame" x="408" y="556" width="250" height="290"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GXZ-L5-oDk">
                                         <rect key="frame" x="46" y="136" width="157" height="2"/>
@@ -126,15 +125,6 @@
                                             <outletCollection property="gestureRecognizers" destination="Ndo-AM-4yL" appends="YES" id="pUk-hT-aPT"/>
                                         </connections>
                                     </imageView>
-                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="gallery" translatesAutoresizingMaskIntoConstraints="NO" id="ZX9-S9-998">
-                                        <rect key="frame" x="50" y="224" width="48" height="49"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <gestureRecognizers/>
-                                        <connections>
-                                            <outletCollection property="gestureRecognizers" destination="p2v-sN-T6g" appends="YES" id="6od-E2-LRp"/>
-                                        </connections>
-                                    </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M3c-72-fbU">
                                         <rect key="frame" x="109" y="224" width="113" height="49"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -142,12 +132,26 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="galleryButton:" destination="S08-Xf-2IQ" eventType="touchUpInside" id="ozi-fJ-GlA"/>
+                                            <action selector="galleryButton:" destination="S08-Xf-2IQ" eventType="touchUpInside" id="1Av-qe-dra"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0GD-FH-MLj">
+                                        <rect key="frame" x="46" y="219" width="56" height="54"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Gallery" image="gallery">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="galleryButton:" destination="S08-Xf-2IQ" eventType="touchUpInside" id="yE2-4l-o3o"/>
                                         </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="290" id="U2M-nj-Jfi"/>
+                                    <constraint firstAttribute="width" constant="250" id="ohp-6C-fJa"/>
+                                </constraints>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="Nhp-Dx-Wfk" appends="YES" id="ZLv-Ra-1p6"/>
                                 </connections>
@@ -156,6 +160,10 @@
                         <color key="backgroundColor" white="0.66666666666666663" alpha="0.5" colorSpace="calibratedWhite"/>
                         <color key="tintColor" red="0.81775083789970671" green="0.81775083789970671" blue="0.81775083789970671" alpha="0.56924229452054809" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="YDJ-5h-Smk" secondAttribute="trailing" constant="90" id="0k1-e5-JAq"/>
+                            <constraint firstItem="g3y-g8-hbQ" firstAttribute="top" secondItem="YDJ-5h-Smk" secondAttribute="bottom" constant="178" id="L9L-E0-flc"/>
+                        </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="kId-af-PrK" appends="YES" id="ycc-h9-MAF"/>
                         </connections>
@@ -164,9 +172,11 @@
                         <outlet property="cameraButton" destination="ACc-Ba-Rbv" id="H8Y-9v-2Z8"/>
                         <outlet property="cameraimageTapGesture" destination="Ndo-AM-4yL" id="vVr-sX-zDN"/>
                         <outlet property="galeryButton" destination="M3c-72-fbU" id="okA-gJ-DcQ"/>
-                        <outlet property="galeryimageTapGesture" destination="p2v-sN-T6g" id="YG4-q3-8Nb"/>
                         <outlet property="smallTapGesture" destination="Nhp-Dx-Wfk" id="HUy-1x-HUT"/>
                         <outlet property="viewDoang" destination="YDJ-5h-Smk" id="n4i-a5-amk"/>
+                        <segue destination="lLr-Ny-lWE" kind="popoverPresentation" identifier="secondsegue" popoverAnchorView="M3c-72-fbU" id="Rvd-ay-BKH">
+                            <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                        </segue>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fWa-74-668" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -181,13 +191,37 @@
                         <action selector="cameraimageTapGesture:" destination="S08-Xf-2IQ" id="pdC-HU-j5t"/>
                     </connections>
                 </tapGestureRecognizer>
-                <tapGestureRecognizer id="p2v-sN-T6g">
-                    <connections>
-                        <action selector="galeryimageTapGesture:" destination="S08-Xf-2IQ" id="Ahs-8f-8tX"/>
-                    </connections>
-                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="822.65625" y="39.84375"/>
+            <point key="canvasLocation" x="925" y="40"/>
+        </scene>
+        <!--PopoverVC-->
+        <scene sceneID="g1G-Cr-wto">
+            <objects>
+                <viewController storyboardIdentifier="nico" modalTransitionStyle="crossDissolve" id="lLr-Ny-lWE" customClass="popoverVC" customModule="Third_Magang_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fB8-CJ-PaV"/>
+                        <viewControllerLayoutGuide type="bottom" id="BXL-Vj-HNI"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="r9M-5Q-6uM">
+                        <rect key="frame" x="0.0" y="0.0" width="500" height="500"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CP7-BJ-6Vp">
+                                <rect key="frame" x="112" y="206" width="276" height="89"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Zapfino" family="Zapfino" pointSize="35"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                    </view>
+                    <value key="contentSizeForViewInPopover" type="size" width="500" height="650"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="500" height="500"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="STH-ZM-ftv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1865" y="40"/>
         </scene>
     </scenes>
     <resources>

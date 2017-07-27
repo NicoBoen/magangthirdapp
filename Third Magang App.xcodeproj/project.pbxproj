@@ -18,6 +18,7 @@
 		6681B3321F205196009CA0A8 /* Third_Magang_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6681B3311F205196009CA0A8 /* Third_Magang_AppUITests.swift */; };
 		6681B3401F205277009CA0A8 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6681B33F1F205277009CA0A8 /* FirstViewController.swift */; };
 		6681B3421F205481009CA0A8 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6681B3411F205481009CA0A8 /* RoundButton.swift */; };
+		669719B31F273E9C00FBDB82 /* popoverVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669719B21F273E9C00FBDB82 /* popoverVC.swift */; };
 		F3555AD3CB0F90770F14448B /* Pods_Third_Magang_AppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBF3E6831DDD511F7FD92365 /* Pods_Third_Magang_AppTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -60,6 +61,7 @@
 		6681B3331F205196009CA0A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6681B33F1F205277009CA0A8 /* FirstViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		6681B3411F205481009CA0A8 /* RoundButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
+		669719B21F273E9C00FBDB82 /* popoverVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = popoverVC.swift; sourceTree = "<group>"; };
 		6E81420D2826EB332B95BDBD /* Pods_Third_Magang_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Third_Magang_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BB91DA4141E579DDCBF4891 /* Pods-Third Magang AppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Third Magang AppUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Third Magang AppUITests/Pods-Third Magang AppUITests.release.xcconfig"; sourceTree = "<group>"; };
 		EBF3E6831DDD511F7FD92365 /* Pods_Third_Magang_AppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Third_Magang_AppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -121,6 +123,7 @@
 				6681B3111F205196009CA0A8 /* AppDelegate.swift */,
 				6681B3131F205196009CA0A8 /* ViewController.swift */,
 				6681B3151F205196009CA0A8 /* Main.storyboard */,
+				669719B21F273E9C00FBDB82 /* popoverVC.swift */,
 				6681B33F1F205277009CA0A8 /* FirstViewController.swift */,
 				6681B3181F205196009CA0A8 /* Assets.xcassets */,
 				6681B3411F205481009CA0A8 /* RoundButton.swift */,
@@ -456,6 +459,7 @@
 				6681B3421F205481009CA0A8 /* RoundButton.swift in Sources */,
 				6681B3401F205277009CA0A8 /* FirstViewController.swift in Sources */,
 				6681B3141F205196009CA0A8 /* ViewController.swift in Sources */,
+				669719B31F273E9C00FBDB82 /* popoverVC.swift in Sources */,
 				6681B3121F205196009CA0A8 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
