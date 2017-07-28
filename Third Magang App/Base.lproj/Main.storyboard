@@ -175,7 +175,7 @@
                         <outlet property="smallTapGesture" destination="Nhp-Dx-Wfk" id="HUy-1x-HUT"/>
                         <outlet property="viewDoang" destination="YDJ-5h-Smk" id="n4i-a5-amk"/>
                         <segue destination="lLr-Ny-lWE" kind="popoverPresentation" identifier="secondsegue" popoverAnchorView="M3c-72-fbU" id="Rvd-ay-BKH">
-                            <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                            <popoverArrowDirection key="popoverArrowDirection"/>
                         </segue>
                     </connections>
                 </viewController>

@@ -18,7 +18,6 @@ class FirstViewController: UIViewController, UIPopoverPresentationControllerDele
     var gambar: UIImageView!
     var delegate: firstVCDelegate?
     
-    
     @IBOutlet weak var viewDoang: UIView!
     
     @IBAction func bigTapGesture(_ sender: Any) {
@@ -26,29 +25,33 @@ class FirstViewController: UIViewController, UIPopoverPresentationControllerDele
     }
     @IBOutlet var smallTapGesture: UITapGestureRecognizer!
     @IBOutlet var cameraimageTapGesture: UITapGestureRecognizer!
-    //@IBOutlet var galeryimageTapGesture: UITapGestureRecognizer!
     
-    //Ini variabel yang untuk viewDoang.frame CGRect
-//    var width: CGFloat = 250
-//    var height: CGFloat = 290
-//    var x: CGFloat = 250
-//    var y: CGFloat = 350
-    
+    //Ini variabel untuk posisi Popover
+    var width: CGFloat = 0
+    var height: CGFloat = 0
+    var x: CGFloat = 1010
+    var y: CGFloat = 350
     
     @IBOutlet weak var cameraButton: UIButton!
     @IBOutlet weak var galeryButton: UIButton!
+    
+//    override var shouldAutorotate: Bool {
+//        return true
+//    }
+//    override var supportedInterfaceOrientations : UIInterfaceOrientationMask {
+//        return .landscape
+//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         cameraButton.contentHorizontalAlignment = UIControlContentHorizontalAlignment.left
         galeryButton.contentHorizontalAlignment = UIControlContentHorizontalAlignment.left
-        
-        
     }
     
     @IBAction func cameraimageTapGesture(_ sender: Any) {
         let imagePicker = UIImagePickerController()
+        
         if UIImagePickerController.isSourceTypeAvailable(.camera){
             imagePicker.mediaTypes = UIImagePickerController.availableMediaTypes(for: .camera)!
             imagePicker.sourceType = .camera
@@ -56,41 +59,47 @@ class FirstViewController: UIViewController, UIPopoverPresentationControllerDele
             imagePicker.delegate = self
             
             self.present(imagePicker, animated: true, completion: nil)
+        }else{
+            let actionSheet = UIAlertController(title: "Oops!", message: "Camera is not available", preferredStyle: .alert)
+            actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+            
+            self.present(actionSheet, animated: true, completion: nil)
+            print("Camera is not available")
         }
-
-        
     }
     
     @IBAction func cameraButton(_ sender: Any) {
-                //let actionSheet = UIAlertController(title: "Are you sure?", message: "", preferredStyle: .alert)
-              // actionSheet.addAction(UIAlertAction(title: "Go to Camera", style: .default, handler: {(_) in
-                    //option that allows User to go to Camera
-                    let imagePicker = UIImagePickerController()
-                    if UIImagePickerController.isSourceTypeAvailable(.camera){
-                    imagePicker.mediaTypes = UIImagePickerController.availableMediaTypes(for: .camera)!
-                    imagePicker.sourceType = .camera
-                    imagePicker.allowsEditing = false
-                    imagePicker.delegate = self
+        let imagePicker = UIImagePickerController()
         
-                    self.present(imagePicker, animated: true, completion: nil)
-                    }
-        
-               // }))
-        //        actionSheet.addAction(UIAlertAction(title: "Cancel", style: .default, handler: nil))
-                
-                
-      //          self.present(actionSheet, animated: true, completion: nil)
-        
-        
+        if UIImagePickerController.isSourceTypeAvailable(.camera){
+            imagePicker.mediaTypes = UIImagePickerController.availableMediaTypes(for: .camera)!
+            imagePicker.sourceType = .camera
+            imagePicker.allowsEditing = false
+            imagePicker.delegate = self
+            //imagePicker.view.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
+            
+            self.present(imagePicker, animated: true, completion: nil)
+        }else{
+            let actionSheet = UIAlertController(title: "Oops!", message: "Camera is not available", preferredStyle: .alert)
+            actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+
+            self.present(actionSheet, animated: true, completion: nil)
+            print("Camera is not available")
+        }
     }
   
 
-    let imagePicker = UIImagePickerController()
     
     @IBAction func galleryButton(_ sender: AnyObject) {
-        
-        
         self.performSegue(withIdentifier: "secondsegue", sender: sender)
+        
+//        let imagePicker = UIImagePickerController()
+//        imagePicker.sourceType = .photoLibrary
+//        imagePicker.allowsEditing = false
+//        imagePicker.delegate = self
+//        //imagePicker.view.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
+//        //imagePicker.view.transform = CGAffineTransform(translationX: 5, y: 50)
+//        self.present(imagePicker, animated: true, completion: nil)
         
         
     }
@@ -105,13 +114,13 @@ class FirstViewController: UIViewController, UIPopoverPresentationControllerDele
         if segue.identifier == "secondsegue"{
 
             let vc = segue.destination
-            vc.preferredContentSize = CGSize(width: 500, height: 500)
+            vc.preferredContentSize = CGSize(width: 1024, height: 550)
             
             let controller = vc.popoverPresentationController
-            controller?.sourceView = self.view            
-            
+            controller?.sourceView = self.view
+            controller?.sourceRect = CGRect(x: x, y: y, width: width, height: height)
+            //controller?.permittedArrowDirections = .right
         }
-        
     }
     
     func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {

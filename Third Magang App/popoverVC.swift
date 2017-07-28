@@ -27,6 +27,13 @@ class popoverVC: UIViewController{
         print("AAAA")
         
     }
+    
+//    override var shouldAutorotate: Bool {
+//        return true
+//    }
+//    override var supportedInterfaceOrientations : UIInterfaceOrientationMask {
+//        return .landscape
+//    }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -35,9 +42,9 @@ class popoverVC: UIViewController{
         amanda.delegate = self
         addChildViewController(amanda)
         view.addSubview(amanda.view)
+        //amanda.preferredContentSize = CGSize(width: 0.3, height: 1)
+        //amanda.view.transform = CGAffineTransform(a: <#T##CGFloat#>, b: <#T##CGFloat#>, c: <#T##CGFloat#>, d: <#T##CGFloat#>, tx: <#T##CGFloat#>, ty: <#T##CGFloat#>)
     }
-    
-    
 }
 
 //How to pick picture from library
@@ -57,10 +64,10 @@ extension popoverVC: UINavigationControllerDelegate, UIImagePickerControllerDele
             print("BBBB")
             
         }
-        func imagePickerControllerDidCancel(_ picker: UIImagePickerController){
-            dismiss(animated: true, completion: nil)
-//            amanda.view.removeFromSuperview()
-//            amanda.removeFromParentViewController()
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController){
+        dismiss(animated: true, completion: nil)
+//        amanda.view.removeFromSuperview()
+//        amanda.removeFromParentViewController()
             
             print("CCC")
         }
